@@ -1,12 +1,19 @@
 import express from 'express'
+import cors from 'cors'
+import morgan from 'morgan'
 import 'dotenv/config'
+import './db/db.js'
 
 const app = express()
 
-app.get('/', (req, res) => {
-  res.send('hello world')
-})
+// App middlewares
+app.use(cors)
+app.use(morgan('dev'))
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log('App listening on: ', process.env.PORT || 3000)
+// App config
+app.set('port', process.env.PORT || 3000)
+const PORT = app.get('port')
+
+app.listen(PORT, () => {
+  console.log('App listening on: ', PORT)
 })
