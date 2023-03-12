@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  node-api:
+    image: node
+    container_name: node_api
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+      - /app/node_modules 
+    ports:
+      - 4000:3000
+    command: npm run dev
+  mysql:
+    image: mysql
+    container_name: mysqldb
+    ports:
+      - 7000:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=test1234
+

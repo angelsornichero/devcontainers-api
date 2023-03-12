@@ -1,16 +1,14 @@
 FROM node:18
 
 # Create workdir
-WORKDIR /usr/src/app
+WORKDIR /app/
 
 # Copy dependencies and install it
 
-COPY package*.json ./
-
+COPY package.json ./
 RUN npm install
 
 # Copy source code
 COPY . .
-
 EXPOSE 5000
-CMD ["node", "src/index.js"]
+CMD ["npm", "run", "dev"]
