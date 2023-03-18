@@ -10,7 +10,6 @@ services:
       - ..:/workspaces:cached 
     ports:
       - 4000:3000
-    network_mode: host
     command: npm run dev
   mysql:
     image: mysql
@@ -19,4 +18,5 @@ services:
       - 7000:3306
     environment:
       - MYSQL_ROOT_PASSWORD=test1234
+
 
