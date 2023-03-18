@@ -9,6 +9,14 @@
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {},
 		"ghcr.io/devcontainers-contrib/features/npm-package:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"rangav.vscode-thunder-client",
+				"dbaeumer.vscode-eslint"
+			]
+		}
 	}
 }
 

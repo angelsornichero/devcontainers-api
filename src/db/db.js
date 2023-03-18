@@ -1,4 +1,5 @@
 import { sequelize } from './connection.js'
+import '../models/KeyModel.js'
 
 (async () => {
   try {
